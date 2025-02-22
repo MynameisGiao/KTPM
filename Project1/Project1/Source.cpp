@@ -9,7 +9,24 @@ bool isPrime(int n) {
     return true;
 }
 
+bool isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        return true;
+    }
+    return false;
+}
+void checkLeapYear() {
+    int year;
+    cout << "Nhap mot nam: ";
+    cin >> year;
 
+    if (isLeapYear(year)) {
+        cout << year << " la nam nhuan." << endl;
+    }
+    else {
+        cout << year << " khong phai la nam nhuan." << endl;
+    }
+}
 int main() {
     int choice;
 
@@ -34,7 +51,7 @@ int main() {
             }
         }
         else if (choice == 2) {
-           // chuc nang 2
+            checkLeapYear(); 
         }
         else if (choice != 0) {
             cout << "Lựa chọn không hợp lệ. Vui lòng chọn lại.\n";
